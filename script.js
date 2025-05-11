@@ -7,8 +7,12 @@ const deleteChatButton = document.querySelector("#delete-chat-button");
 let userMessage = null;
 let isResponseGenerating = false;
 
-const API_KEY = "AIzaSyAJLFHnXCe5IgVDzT0kFDLpCYeFey0XIUs";
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+
+const API_KEY = import.meta.env.VITE_API_KEY;
+const API_URL = `${import.meta.env.VITE_API_URL}?key=${import.meta.env.VITE_API_KEY}`;
+
+// const API_KEY = "AIzaSyAJLFHnXCe5IgVDzT0kFDLpCYeFey0XIUs";
+// const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
 
 const loadLocalstorageData = () => {
